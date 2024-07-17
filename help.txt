@@ -1,0 +1,17 @@
+
+   GENERAL COMMANDS
+============================================
+help        : display help info
+exit; abort : exit application
+
+   MENU COMMANDS
+============================================
+modes          : choose modes 
+range          : choose range of values for
+                 calculations
+score          : display current score
+scoreboard; sb : display scoreboard
+name           : enter your name for scoreboard
+save           : save score to scoreboard
+store          : save settings to file (config.ini)
+restore        : read settings from file (config.ini)
