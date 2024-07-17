@@ -15,6 +15,8 @@ Bekannte Bugs:
 	vielleicht finde ich mal Zeit und Muße, wahrscheinlich aber nicht.
 - Unter Umständen gibt's Abstürze, wenn z.B. mit 'restore test' eine nichtvorhandene .ini
     gelesen wird. Ist mir aber egal.
+- Das Scoreboard ist aktuell nur eine Liste, an der Zeilen angehängt werden. Gibt aktuell
+    noch kein Ranking oder sowas. Aber es ist im CSV Format also hey, wer will der kann.
 
 Schöne Grüße
 Alexander Schneider
