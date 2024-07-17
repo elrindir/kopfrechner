@@ -98,7 +98,7 @@ while not abort:
             result = operands[0] / operands[1]
 
             # Rechenaufgabe schreiben
-            aufgabeStr = "Enter the quotient: " + str(result)
+            aufgabeStr = "Enter the quotient: "
             rechnungStr = str(operands[0]) + " : " + str(operands[1])    
 
 
@@ -179,20 +179,32 @@ while not abort:
         with open("scoreboard.txt", "a") as myFile:
             myFile.write(newScoreEntryStr)
 
-    elif answer == "store":
-        helpers.create_config(name,
+    elif answer.startswith("store"):
+        # use different file name if user specifies it, otherwise use config
+        configfilename = "config" 
+        cmdList = answer.split()
+        if len(cmdList) >=2: configfilename=cmdList[1]
+        # create config
+        helpers.create_config(configfilename,
+                              name,
                               helpers.currentModesString(modes),
                               numOperands,
                               lowerBound,
                               upperBound)
-    elif answer == "restore":
-        configData = helpers.read_config()
+        print("Stored current config in " + configfilename + ".ini")
+    elif answer.startswith("restore"):
+        # use different file name if user specifies it, otherwise use config
+        configfilename = "config" 
+        cmdList = answer.split()
+        if len(cmdList) >=2: configfilename=cmdList[1]
+        # read config
+        configData = helpers.read_config(configfilename)
         name=configData['name']
         helpers.setModesByString(modes, configData['modesStr'])
         numOperands= int(configData['numOperands'])
         lowerBound = int(configData['lowerBound'])
         upperBound = int(configData['upperBound'])
-
+        print("Restored config from " + configfilename + ".ini")
 
     # Keine Antwort
     elif answer == "":

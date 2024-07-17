@@ -79,7 +79,7 @@ def printFile(file):
     return
 
 
-def create_config(name, modesStr, numOperands, lowerBound, upperBound):
+def create_config(filename, name, modesStr, numOperands, lowerBound, upperBound):
     config = configparser.ConfigParser()
  
     # Add sections and key-value pairs
@@ -90,15 +90,15 @@ def create_config(name, modesStr, numOperands, lowerBound, upperBound):
                         'upperbound':   upperBound}
  
     # Write the configuration to a file
-    with open('config.ini', 'w') as configfile:
+    with open(filename + ".ini", 'w') as configfile:
         config.write(configfile)
  
-def read_config():
+def read_config(filename):
     # Create a ConfigParser object
     config = configparser.ConfigParser()
  
     # Read the configuration file
-    config.read('config.ini')
+    config.read(filename + ".ini")
  
     # Access values from the configuration file
     name = config.get('Settings', 'name')
