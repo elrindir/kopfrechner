@@ -199,7 +199,7 @@ while not abort:
         continue
 
     # Ab hier erwarte ich nur noch numerische eingaben!
-    elif not answer.isnumeric():
+    elif not helpers.isValidNumber(answer):
         print("That was no valid answer.")
 
     # Richtige Antwort

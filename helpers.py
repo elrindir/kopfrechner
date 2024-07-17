@@ -10,6 +10,13 @@ class rechenDisziplin(Enum):
     MAL="*"
     GETEILT="/"
 
+def isValidNumber(input: str) -> bool:
+    try:
+        int(input)
+        return True
+    except ValueError:
+        return False
+
 # Hilfsfunktion für Punkteberechnen
 def points(mode, arguments: list, correct):
     i = 0
