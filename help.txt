@@ -13,5 +13,6 @@ score          : display current score
 scoreboard; sb : display scoreboard
 name           : enter your name for scoreboard
 save           : save score to scoreboard
-store          : save settings to file (config.ini)
-restore        : read settings from file (config.ini)
+store [file]   : save settings to file (config.ini)
+restore [file] : read settings from file (config.ini)
+show [file]    : display settings in file (config.ini)

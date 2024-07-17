@@ -205,6 +205,12 @@ while not abort:
         lowerBound = int(configData['lowerBound'])
         upperBound = int(configData['upperBound'])
         print("Restored config from " + configfilename + ".ini")
+    elif answer.startswith("show"):
+        # use different file name if user specifies it, otherwise use config
+        configfilename = "config" 
+        cmdList = answer.split()
+        if len(cmdList) >=2: configfilename=cmdList[1]
+        helpers.printFile(configfilename + ".ini")
 
     # Keine Antwort
     elif answer == "":
