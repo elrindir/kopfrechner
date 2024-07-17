@@ -29,7 +29,7 @@ def points(mode, arguments: list, correct):
             case rechenDisziplin.MINUS:
                 i+=1
             case rechenDisziplin.MAL:
-                i+=1 * arguments.count()
+                i+=1 * len(arguments)
             case rechenDisziplin.GETEILT:
                 i+=3
 
